@@ -23,6 +23,8 @@ jobs:
         api_key: $GITHUB_OAUTH_TOKEN
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
+        on:
+          tags: true
     - stage: deploy to cf
       language: bash
       script:
@@ -37,3 +39,6 @@ jobs:
         password: $CF_PASSWORD
         organization: $CF_ORG
         space: $CF_SPACE
+
+before_script:
+  - chmod +x gradlew
