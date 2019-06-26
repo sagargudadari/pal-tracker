@@ -56,3 +56,4 @@ jobs:
 
 before_script:
   - chmod +x gradlew
+  - chmod +x migrate-databases.sh
